@@ -1,0 +1,68 @@
+// Zed Editor Configuration
+//
+// For full configuration options, see:
+// https://zed.dev/docs/configuring-zed
+//
+// To view default settings, run `zed: open default settings`
+// from the command palette (Cmd+Shift+P / Ctrl+Shift+P)
+
+{
+  //////////////////////////
+  // UI Settings
+  //////////////////////////
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 16,
+  "icon_theme": "Material Icon Theme",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Ayu Dark"
+  },
+
+  //////////////////////////
+  // Buffer Settings
+  //////////////////////////
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 14,
+  "buffer_line_height": { "custom": 2.25 },
+
+  //////////////////////////
+  // Terminal Settings
+  //////////////////////////
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font"
+    // Optionally add "font_size": 14
+  },
+
+  //////////////////////////
+  // Editor Behavior
+  //////////////////////////
+  "format_on_save": "on",
+  "autosave": "on_focus_change",
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "max_severity": "warning"
+    }
+  },
+
+  //////////////////////////
+  // AI Completion & LSP
+  //////////////////////////
+  "ai.inline_suggestions.enabled": false,
+  "show_edit_predictions": false,
+
+  //////////////////////////
+  // Language-Specific Settings
+  //////////////////////////
+  "languages": {
+    "Python": {
+      "format_on_save": {
+        "external": {
+          "command": "black",
+          "arguments": ["-"]
+        }
+      }
+    }
+  }
+}
