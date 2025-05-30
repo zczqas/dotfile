@@ -96,3 +96,9 @@ echo ".config/nvim/lua"
 
 - Mask is another command runner, like just and make, but the config file is a standard markdown file, as you see here.
 - This is a really neat trick, as it means your documentation can serve as your code, and vice versa
+
+# PRESENTERM
+
+> A terminal slideshow presentation tool
+
+- Create presentation in markdown format and run them in the terminal
