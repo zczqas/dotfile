@@ -10,6 +10,8 @@ services:
     environment:
       - BASE_URL=http://localhost:8888/
       - INSTANCE_NAME=MySearXNG
-      - SEARXNG_SETTINGS_PATH=/etc/searxng/settings.yml
+      - SEARXNG_SETTINGS_PATH=/opt/searxng/settings.yml
     volumes:
-      - ./settings.yml:/etc/searxng/settings.yml:ro
+      - ./settings.yml:/opt/searxng/settings.yml:ro
+    env_file:
+      - .env
