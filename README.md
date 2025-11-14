@@ -1,5 +1,11 @@
 This repository contains all of the system configuration and Command-line tools for my System and Developer configuration.
 
+# TMUX
+
+> A terminal multiplexer
+
+- Use [Catppuccin](https://github.com/catppuccin/tmux) along with custom config
+
 # WEBINSTALL
 
 > Effortlessly install developer tools with easy-to-remember URLs
