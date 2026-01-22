@@ -1,0 +1,205 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "spacing": 2,
+  "exclusive": true,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "custom/omarchy",
+    "custom/separator",
+    "group/disks",
+    "custom/separator",
+    "group/media"
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+    "custom/screenrecording-indicator",
+    "custom/update"
+  ],
+  "modules-right": [
+    // "custom/brightness",
+    // "custom/separator",
+    "pulseaudio",
+    "custom/separator",
+    "network",
+    "custom/separator",
+    // "battery",
+    // "custom/separator",
+    "hyprland/language",
+    "custom/separator",
+    // "bluetooth",
+    // "custom/separator",
+    "clock",
+    "custom/separator",
+    "custom/power"
+  ],
+  // Groups
+  "group/disks": {
+    "orientation": "horizontal",
+    "modules": [
+      "disk#root",
+      "cpu"
+    ]
+  },
+  "group/media": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "media-controls",
+      "transition-left-to-right": true,
+      "click-to-reveal": false
+    },
+    "modules": [
+      "custom/media-icon",
+      "mpris"
+    ]
+  },
+  "custom/separator": {
+    "format": " | ",
+    "tooltip": false
+  },
+  // left
+  "custom/media-icon": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/omarchy": {
+    "format": "ARCH",
+    "on-click": "omarchy-menu",
+    "tooltip": false
+  },
+  "cpu": {
+    "interval": 2,
+    "format": "CPU: {usage}%",
+    "tooltip": true,
+    "tooltip-format": "CPU Usage: {usage}%"
+  },
+  "disk#root": {
+    "interval": 30,
+    "format": "/ {percentage_used}%  ",
+    "path": "/",
+    "tooltip": true,
+    "tooltip-format": "Root: {used} used of {total} ({percentage_used}%)",
+    "on-click-right": "kitty -e ncdu /"
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "󰎆",
+      "spotify": "",
+      "firefox": ""
+    },
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "max-length": 35,
+    "dynamic-order": [
+      "title",
+      "artist"
+    ],
+    "dynamic-separator": " - ",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "hyprctl dispatch togglespecialworkspace magic"
+  },
+  // Center
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "I",
+      "2": "II",
+      "3": "III",
+      "4": "IV",
+      "5": "V",
+      "6": "VI",
+      "7": "VII",
+      "8": "VIII",
+      "9": "IX",
+      "10": "X"
+    }
+  },
+  "custom/screenrecording-indicator": {
+    "on-click": "omarchy-cmd-screenrecord",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
+    "signal": 8,
+    "return-type": "json"
+  },
+  "custom/update": {
+    "format": "U",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 21600
+  },
+  // Right
+  "custom/brightness": {
+    "device": "intel_backlight",
+    "format": "B: {}",
+    "tooltip": true,
+    "tooltip-format": "Brightness: {percent}%"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "V: MUTED",
+    "format-icons": {
+      "headphone": "H:",
+      "default": [
+        "V:",
+        "V:",
+        "V:"
+      ]
+    },
+    "scroll-step": 5,
+    "on-click": "omarchy-launch-audio",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%"
+  },
+  "network": {
+    "interval": 5,
+    "format-wifi": "N: {signalStrength}%",
+    "format-ethernet": "WIRED",
+    "format-disconnected": "N: Off",
+    "on-click": "omarchy-launch-wifi"
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "BAT: {capacity}%",
+    "format-charging": "CH: {capacity}%",
+    "on-click": "omarchy-menu power"
+  },
+  "bluetooth": {
+    "format": "BT: {num_connections}",
+    "format-off": "BT: Off",
+    "format-disabled": "BT: Disabled",
+    "format-connected": "BT: Connected",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "omarchy-launch-bluetooth"
+  },
+  "hyprland/language": {
+    "format": "KB: {}",
+    "format-en": "US"
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %d %B %Y  %H:%M:%S}",
+    "tooltip": false
+  },
+  "custom/power": {
+    "format": "X",
+    "on-click": "omarchy-menu system",
+    "tooltip": false
+  }
+}
