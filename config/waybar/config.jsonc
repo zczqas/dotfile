@@ -30,6 +30,8 @@
     "custom/separator",
     // "bluetooth",
     // "custom/separator",
+    "tray",
+    "custom/separator",
     "clock",
     "custom/separator",
     "custom/power"
@@ -177,6 +179,10 @@
     "format": "BAT: {capacity}%",
     "format-charging": "CH: {capacity}%",
     "on-click": "omarchy-menu power"
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
   },
   "bluetooth": {
     "format": "BT: {num_connections}",
