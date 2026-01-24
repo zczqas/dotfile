@@ -8,9 +8,7 @@
   "modules-left": [
     "custom/omarchy",
     "custom/separator",
-    "group/disks",
-    "custom/separator",
-    "group/media"
+    "group/left-modules"
   ],
   "modules-center": [
     "hyprland/workspaces",
@@ -18,25 +16,26 @@
     "custom/update"
   ],
   "modules-right": [
-    // "custom/brightness",
-    // "custom/separator",
-    "pulseaudio",
-    "custom/separator",
-    "network",
-    "custom/separator",
-    // "battery",
-    // "custom/separator",
-    "hyprland/language",
-    "custom/separator",
-    // "bluetooth",
-    // "custom/separator",
-    "tray",
-    "custom/separator",
-    "clock",
+    "group/system-info",
     "custom/separator",
     "custom/power"
   ],
   // Groups
+  "group/left-modules": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "left-modules-controls",
+      "transition-left-to-right": true,
+      "click-to-reveal": false
+    },
+    "modules": [
+      "custom/left-icon",
+      "group/disks",
+      "custom/separator",
+      "group/media"
+    ]
+  },
   "group/disks": {
     "orientation": "horizontal",
     "modules": [
@@ -46,15 +45,34 @@
   },
   "group/media": {
     "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 300,
-      "children-class": "media-controls",
-      "transition-left-to-right": true,
-      "click-to-reveal": false
-    },
     "modules": [
       "custom/media-icon",
       "mpris"
+    ]
+  },
+  "group/system-info": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "system-info-controls",
+      "transition-left-to-right": false,
+      "click-to-reveal": false
+    },
+    "modules": [
+      "custom/system-icon",
+      // "custom/brightness",
+      // "custom/separator",
+      "pulseaudio",
+      "custom/separator",
+      "network",
+      "custom/separator",
+      // "battery",
+      // "custom/separator",
+      // "bluetooth",
+      // "custom/separator",
+      "tray",
+      "custom/separator",
+      "clock"
     ]
   },
   "custom/separator": {
@@ -62,7 +80,15 @@
     "tooltip": false
   },
   // left
+  "custom/left-icon": {
+    "format": "",
+    "tooltip": false
+  },
   "custom/media-icon": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/system-icon": {
     "format": "",
     "tooltip": false
   },
@@ -192,10 +218,6 @@
     "format-no-controller": "",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "omarchy-launch-bluetooth"
-  },
-  "hyprland/language": {
-    "format": "KB: {}",
-    "format-en": "US"
   },
   "clock": {
     "interval": 1,
