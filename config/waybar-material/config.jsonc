@@ -33,6 +33,7 @@
 		"tray",
 		"battery",
 		"pulseaudio",
+		"bluetooth",
 		"network",
 		"clock"
 	],
@@ -54,6 +55,13 @@
 		"interval": 5,
 		"format": "󰍛",
 		"on-click": "omarchy-launch-or-focus-tui btop"
+	},
+	"memory": {
+		"format": ""
+	},
+	"temperature": {
+		"critical-threshold": 80,
+		"format": ""
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
@@ -80,6 +88,8 @@
 		"modules": [
 			"custom/expand",
 			"cpu",
+			"memory",
+			"temperature",
 			"custom/voxtype",
 			"custom/screenrecording-indicator",
 			"idle_inhibitor"
@@ -212,8 +222,13 @@
 		"on-click-right": "omarchy-voxtype-config",
 		"on-click": "omarchy-voxtype-model"
 	},
-	"tray": {
-		"icon-size": 12,
-		"spacing": 17
+	"bluetooth": {
+		"format": "",
+		"format-off": "󰂲",
+		"format-disabled": "󰂲",
+		"format-connected": "󰂱",
+		"format-no-controller": "",
+		"tooltip-format": "Devices connected: {num_connections}",
+		"on-click": "omarchy-launch-bluetooth"
 	}
 }

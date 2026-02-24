@@ -14,7 +14,7 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: JetBrainsMono Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 12px;
     min-height: 0;
 }
@@ -58,7 +58,6 @@ tooltip label {
 }
 
 #workspaces button {
-    font-weight: bold;
     padding: 0px 5px;
     margin: 0px 3px;
     border-radius: 16px;
@@ -68,7 +67,6 @@ tooltip label {
 }
 
 #workspaces button.active {
-    font-weight: bold;
     background-color: @primary;
     color: @scrim;
     border-radius: 16px;
@@ -78,7 +76,6 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    font-weight: bold;
     background-color: @tertiary;
     color: @scrim;
     border-radius: 16px;
@@ -87,7 +84,6 @@ tooltip label {
 }
 
 #workspaces button.urgent {
-    font-weight: bold;
     background-color: @error;
     color: @scrim;
     border-radius: 16px;
@@ -97,28 +93,11 @@ tooltip label {
 }
 
 
-/*-----------SwayNC & Weather------------*/
-#custom-swaync,
-#custom-weather {
-    font-weight: bold;
-    background: @surface;
-    margin: 5px;
-    padding: 8px 16px;
-    color: @on_surface;
-}
-
-#custom-weather {
-    border-radius: 24px 10px 24px 10px;
-}
-
-#custom-swaync {
-    border-radius: 10px 24px 10px 24px;
-}
-
 /*---------------Tray, Clock, Playerctl, Battery, Cpu, Temperature, Colorpicker, Memory, Idle_inhibitor----------------------*/
 #tray,
 #pulseaudio,
 #network,
+#bluetooth,
 #battery,
 #cpu,
 #temperature,
@@ -130,13 +109,13 @@ tooltip label {
 #custom-playerctl.play,
 #custom-playerctl.forward {
     background: @surface;
-    font-weight: bold;
     margin: 5px 0px;
 }
 
 #tray,
 #pulseaudio,
 #network,
+#bluetooth,
 #battery {
     color: @on_surface;
     border-radius: 10px 24px 10px 24px;
@@ -150,8 +129,6 @@ tooltip label {
     border-radius: 0px 0px 0px 40px;
     padding: 10px 10px 15px 25px;
     margin-left: 7px;
-    font-weight: bold;
-    font-size: 14px;
 }
 
 #tray menu * {
@@ -182,7 +159,7 @@ tooltip label {
 #custom-playerctl.backward {
     color: @tertiary;
     border-radius: 24px 0px 0px 10px;
-    padding-left: 16px;
+    padding-left: 10px;
     margin-left: 7px;
 }
 
@@ -204,7 +181,6 @@ tooltip label {
     padding: 0 20px;
     border-radius: 24px 10px 24px 10px;
     margin: 5px 0;
-    font-weight: bold;
 }
 
 /*-----------Group--------------*/
@@ -226,11 +202,11 @@ tooltip label {
 }
 
 /*--------------Cpu, Termperature, Colorpicker, Memory, Idle_inhibitor----------------*/
-#custom-colorpicker,
+#custom-voxtype,
+#custom-screenrecording-indicator,
 #cpu,
 #temperature,
 #memory,
-#custom-pacman,
 #idle_inhibitor {
     background: @surface;
     font-size: 16px;
@@ -248,9 +224,6 @@ tooltip label {
     color: @tertiary;
 }
 
-#custom-pacman {
-    color: @primary;
-}
 
 #idle_inhibitor {
     color: @on_surface;
@@ -269,26 +242,24 @@ tooltip label {
 }
 
 #temperature,
-#memory,
-#custom-pacman,
-#idle_inhibitor {
+#memory {
     padding-left: 7px;
     padding-right: 7px;
 }
 
-#custom-colorpicker {
-    color: @tertiary;
-    border-radius: 0px 10px 24px 0px;
-    padding-right: 12px;
+#idle_inhibitor {
     padding-left: 7px;
-    margin-right: 7px
+    padding-right: 24px;
+    border-radius: 0px 10px 24px 0px;
 }
+
 
 /*---------------Expand---------------*/
 #custom-expand {
     background: transparent;
     color: @on_surface;
     margin: 1px;
+    margin-right: 7px;
     font-size: 22px;
 }
 
